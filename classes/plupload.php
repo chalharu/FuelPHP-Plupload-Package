@@ -234,7 +234,7 @@ __EOT__;
 		if (self::isLastChunk()) {
 			rename( self::$partFilePath, self::$filePath);
 			if(is_callable(self::$callFunc)){
-				call_user_func(self::$callFunc);
+				call_user_func(self::$callFunc, self::$fileName);
 			}
 			die('{"jsonrpc" : "2.0", "result" : null, "id" : "id"}');
 			//アップロード終了時処理
