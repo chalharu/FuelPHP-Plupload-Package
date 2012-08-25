@@ -299,7 +299,7 @@ __EOT__;
 	 * @return boolean
 	 */
 	protected static function isLastChunk(){
-		if(self::$_chunk == (self::$_chunks - 1)){
+		if(self::$_chunk == (self::$_chunks - 1) || self::$_chunks == 0){
 			return true;
 		}
 		return false;
