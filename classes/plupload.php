@@ -215,8 +215,8 @@ __EOT__;
 			self::setUploadFinishCallback($callback);
 		}
 
-        Profiler::stop_profiling();
-
+		\Fuel::$profiling = false;
+ 
 		self::$targetDir = static::$config['upload_tmp_dir'];
 		self::$cleanupTargetDir = static::$config['cleanup_upload_tmp'];
 		self::$maxFileAge = static::$config['max_tmp_age'];
