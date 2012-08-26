@@ -1,5 +1,5 @@
 <?php
-namespace PLUPLOAD;
+namespace Plupload;
 class Plupload
 {
 	protected static $targetDir = null;
@@ -214,6 +214,9 @@ __EOT__;
 		if(is_callable($callback)){
 			self::setUploadFinishCallback($callback);
 		}
+
+        Profiler::stop_profiling();
+
 		self::$targetDir = static::$config['upload_tmp_dir'];
 		self::$cleanupTargetDir = static::$config['cleanup_upload_tmp'];
 		self::$maxFileAge = static::$config['max_tmp_age'];
